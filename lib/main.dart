@@ -46,24 +46,25 @@ class _MyAppState extends State<MyApp> {
       "answer": "Olajide",
     },
   ];
-  int index = 0, right = 0, wrong = 0;
+  int index = 0, right = 0, wrong = 0, adder = 1;
   String result = '';
   validateAnswer(userInput) {
     setState(() {
       if (index < questions.length - 1) {
         if (userInput == questions[index]["answer"]) {
-          right++;
+          right = right + adder;
         } else {
-          wrong++;
+          wrong = wrong + adder;
         }
         index++;
       } else if (index == questions.length - 1) {
         if (userInput == questions[index]["answer"]) {
-          right++;
+          right = right + adder;
         } else {
-          wrong++;
+          wrong = wrong + adder;
         }
         result = "Hey, you got $right right and $wrong wrong!.";
+        adder = 0;
       }
     });
   }
@@ -74,6 +75,7 @@ class _MyAppState extends State<MyApp> {
       right = 0;
       wrong = 0;
       result = '';
+      adder = 1;
     });
   }
 
@@ -194,7 +196,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
             Container(
-              height: 30,
+              height: 10,
             ),
             Text(
               result,
@@ -206,7 +208,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
             Container(
-              height: 30,
+              height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
