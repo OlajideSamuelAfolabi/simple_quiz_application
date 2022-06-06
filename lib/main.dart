@@ -118,6 +118,36 @@ class _MyAppState extends State<MyApp> {
           isSelected["option_c"] = false;
           isSelected["option_d"] = false;
         }
+      } else if (index == questions.length - 2) {
+        index = 0;
+        if (questions[index]["selected"] == "option_a") {
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+          isSelected["option_a"] = true;
+        } else if (questions[index]["selected"] == "option_b") {
+          isSelected["option_a"] = false;
+
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+          isSelected["option_b"] = true;
+        } else if (questions[index]["selected"] == "option_c") {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+
+          isSelected["option_d"] = false;
+          isSelected["option_c"] = true;
+        } else if (questions[index]["selected"] == "option_d") {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = true;
+        } else {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+        }
       }
     });
   }
@@ -126,6 +156,36 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       if (1 < index) {
         index--;
+        if (questions[index]["selected"] == "option_a") {
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+          isSelected["option_a"] = true;
+        } else if (questions[index]["selected"] == "option_b") {
+          isSelected["option_a"] = false;
+
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+          isSelected["option_b"] = true;
+        } else if (questions[index]["selected"] == "option_c") {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+
+          isSelected["option_d"] = false;
+          isSelected["option_c"] = true;
+        } else if (questions[index]["selected"] == "option_d") {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = true;
+        } else {
+          isSelected["option_a"] = false;
+          isSelected["option_b"] = false;
+          isSelected["option_c"] = false;
+          isSelected["option_d"] = false;
+        }
+      } else if (index == 1) {
+        index = questions.length - 2;
         if (questions[index]["selected"] == "option_a") {
           isSelected["option_b"] = false;
           isSelected["option_c"] = false;
