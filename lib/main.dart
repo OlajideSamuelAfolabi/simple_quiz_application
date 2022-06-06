@@ -161,7 +161,6 @@ class _MyAppState extends State<MyApp> {
   done() {
     setState(() {
       index = 0;
-
       score = 0;
       isSelected["option_a"] = false;
       isSelected["option_b"] = false;
@@ -170,6 +169,7 @@ class _MyAppState extends State<MyApp> {
       result = '';
       for (var i = 1; i < questions.length - 1; i++) {
         questions[i]["selected"] = "";
+        questions[i]["right"] = 0;
       }
     });
   }
