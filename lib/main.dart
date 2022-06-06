@@ -119,7 +119,7 @@ class _MyAppState extends State<MyApp> {
           isSelected["option_d"] = false;
         }
       } else if (index == questions.length - 2) {
-        index = 0;
+        index = 1;
         if (questions[index]["selected"] == "option_a") {
           isSelected["option_b"] = false;
           isSelected["option_c"] = false;
